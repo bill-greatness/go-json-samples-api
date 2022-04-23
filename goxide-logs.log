@@ -1,0 +1,22 @@
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /users/                   --> github.com/bill-greatness/goxide/models/users.GetUsers (3 handlers)
+[GIN-debug] GET    /users/:id                --> github.com/bill-greatness/goxide/models/users.GetUser (3 handlers)
+[GIN-debug] POST   /users/                   --> github.com/bill-greatness/goxide/models/users.AddUser (3 handlers)
+[GIN-debug] DELETE /users/:id                --> github.com/bill-greatness/goxide/models/users.DeleteUser (3 handlers)
+[GIN-debug] PUT    /users/:id                --> github.com/bill-greatness/goxide/models/users.UpdateUser (3 handlers)
+[GIN-debug] GET    /todos/                   --> github.com/bill-greatness/goxide/models/todos.GetTodos (3 handlers)
+[GIN-debug] GET    /todos/:id                --> github.com/bill-greatness/goxide/models/todos.GetTodo (3 handlers)
+[GIN-debug] POST   /todos/                   --> github.com/bill-greatness/goxide/models/todos.AddTodo (3 handlers)
+[GIN-debug] DELETE /todos/:id                --> github.com/bill-greatness/goxide/models/todos.DeleteTodo (3 handlers)
+[GIN-debug] PATCH  /todos/:id                --> github.com/bill-greatness/goxide/models/todos.UpdateTodo (3 handlers)
+[GIN-debug] GET    /posts/                   --> github.com/bill-greatness/goxide/models/posts.GetPosts (3 handlers)
+[GIN-debug] GET    /posts/:id                --> github.com/bill-greatness/goxide/models/posts.GetPost (3 handlers)
+[GIN-debug] DELETE /posts/:id                --> github.com/bill-greatness/goxide/models/posts.DeletePost (3 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on localhost:5050
