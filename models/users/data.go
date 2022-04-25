@@ -9,7 +9,7 @@ import (
 
 func GetData(total int) []*User {
 	dir, _ := os.Getwd()
-	fileLink := dir + "/data/user-data.json"
+	fileLink := dir + "/data/users.json"
 
 	// Unmarshall users to struct.
 	// convert json to Array of Bytes.

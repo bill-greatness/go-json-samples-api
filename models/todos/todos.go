@@ -15,7 +15,6 @@ type Todo struct {
 	UserID   int    `json:"userID" validate:"required"`
 	Activity string `json:"activity" validate:"required"`
 	Time     string `json:"time"`
-	Date     string `json:"date"`
 	Status   string `json:"status"`
 }
 

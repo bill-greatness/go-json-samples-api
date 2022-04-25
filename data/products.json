@@ -1,0 +1,258 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "item": {
+        "name": "Natarag Pencils",
+        "photoURL": "",
+        "datePosted": "02/02/2022",
+        "description": "Great Pencils for all your works."
+      },
+      "status": "Out Of Stock",
+      "rating": 3,
+      "price": 0.55,
+      "currency": "AED",
+      "store": {
+        "name": "Elora Group",
+        "logo": "https://via.placeholder.com/120x120.png",
+        "category": "Restaurants",
+        "storeID": 3,
+        "openingHours": "10:00 - 21:00",
+        "phoneLine": "(268)-998-7120",
+        "numberOfFollowers": 2246,
+        "address": {
+          "street": "FishEye St.",
+          "cordinates": { "longitude": 4.443, "lattitude": 12.11 }
+        }
+      }
+    },
+    {
+      "id": 2,
+      "item": {
+        "name": "Final Test Item",
+        "category": "N/A",
+        "datePosted": "09/04/2022",
+        "description": "Some Description Here"
+      },
+      "status": "Out Of Stock",
+      "rating": 5,
+      "price": 12.12,
+      "currency": "EUR",
+      "store": {
+        "name": "Elora Group",
+        "logo": "https://via.placeholder.com/120x120.png",
+        "category": "Restaurants",
+        "storeID": 3,
+        "openingHours": "10:00 - 21:00",
+        "phoneLine": "(268)-998-7120",
+        "numberOfFollowers": 2246,
+        "address": {
+          "street": "FishEye St.",
+          "cordinates": { "longitude": 4.443, "lattitude": 12.11 }
+        }
+      }
+    },
+    {
+      "id": 3,
+      "item": {
+        "name": "Cocoa Chocolate",
+        "datePosted": "06/04/2022",
+        "description": "Chocolate Description Here"
+      },
+      "status": "3 left in stock",
+      "rating": 4,
+      "price": 14.3,
+      "currency": "USD",
+      "store": {
+        "name": "Alpine Store",
+        "logo": "https://via.placeholder.com/120x120.png",
+        "category": "Fashion",
+        "storeID": 5,
+        "openingHours": "6:00 - 18:00",
+        "phoneLine": "(13)-859-2112",
+        "numberOfFollowers": 687,
+        "address": {
+          "street": "Jane Newman St.",
+          "cordinates": { "longitude": 14.231, "lattitude": 12.11 }
+        }
+      }
+    },
+    {
+      "id": 4,
+      "item": {
+        "name": "Track Suit",
+        "datePosted": "04/05/2022",
+        "description": "Neat Track Suite for you"
+      },
+      "status": "Available",
+      "rating": 5,
+      "price": 14.3,
+      "currency": "AED",
+      "store": {
+        "name": "Elora Group",
+        "logo": "https://via.placeholder.com/120x120.png",
+        "category": "Restaurants",
+        "storeID": 3,
+        "openingHours": "10:00 - 21:00",
+        "phoneLine": "(268)-998-7120",
+        "numberOfFollowers": 2246,
+        "address": {
+          "street": "FishEye St.",
+          "cordinates": { "longitude": 4.443, "lattitude": 12.11 }
+        }
+      }
+    },
+    {
+      "id": 5,
+      "item": {
+        "name": "Prokes Insecticide",
+        "datePosted": "09/03/2021",
+        "description": "Some Description Here"
+      },
+      "status": "Banned",
+      "rating": 5,
+      "price": 300,
+      "currency": "CNY",
+      "store": {
+        "name": "Cookies Cooks",
+        "logo": "https://via.placeholder.com/120x120.png",
+        "category": "General Goods",
+        "storeID": 4,
+        "openingHours": "3:00 - 22:00",
+        "phoneLine": "(243)-248-6624",
+        "numberOfFollowers": 4921,
+        "address": {
+          "street": "BX Trio St.",
+          "cordinates": { "longitude": 12.231, "lattitude": 0.334 }
+        }
+      }
+    },
+    {
+      "id": 6,
+      "item": {
+        "name": "Natarag Pencils",
+        "photoURL": "",
+        "datePosted": "02/02/2022",
+        "description": "Great Pencils for all your works."
+      },
+      "status": "Available",
+      "rating": 3,
+      "price": 14.0,
+      "currency": "CFA",
+      "store": {
+        "name": "Cookies Cooks",
+        "logo": "https://via.placeholder.com/120x120.png",
+        "category": "Supermarket",
+        "storeID": 2,
+        "openingHours": "8:00 - 20:00",
+        "phoneLine": "(141)-103-9885",
+        "numberOfFollowers": 1893,
+        "address": {
+          "street": "Litos St.",
+          "cordinates": { "longitude": 8.5564, "lattitude": 18.334 }
+        }
+      }
+    },
+    {
+      "id": 7,
+      "item": {
+        "name": "Mouse Eraser",
+        "datePosted": "04/05/2020",
+        "description": "Nice eraser for your kids."
+      },
+      "status": "N/A",
+      "rating": 3,
+      "price": 14.3,
+      "currency": "CNY",
+      "store": {
+        "name": "Cookies Cooks",
+        "logo": "https://via.placeholder.com/120x120.png",
+        "category": "Supermarket",
+        "storeID": 2,
+        "openingHours": "8:00 - 20:00",
+        "phoneLine": "(141)-103-9885",
+        "numberOfFollowers": 1893,
+        "address": {
+          "street": "Litos St.",
+          "cordinates": { "longitude": 8.5564, "lattitude": 18.334 }
+        }
+      }
+    },
+    {
+      "id": 8,
+      "item": {
+        "name": "Natarag Pencils",
+        "photoURL": "",
+        "datePosted": "02/02/2022",
+        "description": "Great Pencils for all your works."
+      },
+      "status": "N/A",
+      "rating": 1,
+      "price": 300,
+      "currency": "CNY",
+      "store": {
+        "name": "Cookies Cooks",
+        "logo": "https://via.placeholder.com/120x120.png",
+        "category": "General Goods",
+        "storeID": 4,
+        "openingHours": "3:00 - 22:00",
+        "phoneLine": "(243)-248-6624",
+        "numberOfFollowers": 4921,
+        "address": {
+          "street": "BX Trio St.",
+          "cordinates": { "longitude": 12.231, "lattitude": 0.334 }
+        }
+      }
+    },
+    {
+      "id": 9,
+      "item": {
+        "name": "Mouse Eraser",
+        "datePosted": "04/05/2020",
+        "description": "Nice eraser for your kids."
+      },
+      "status": "Available",
+      "rating": 5,
+      "price": 14.0,
+      "currency": "USD",
+      "store": {
+        "name": "Cookies Cooks",
+        "logo": "https://via.placeholder.com/120x120.png",
+        "category": "Supermarket",
+        "storeID": 2,
+        "openingHours": "8:00 - 20:00",
+        "phoneLine": "(141)-103-9885",
+        "numberOfFollowers": 1893,
+        "address": {
+          "street": "Litos St.",
+          "cordinates": { "longitude": 8.5564, "lattitude": 18.334 }
+        }
+      }
+    },
+    {
+      "id": 10,
+      "item": {
+        "name": "Sanyo Cabbage",
+        "datePosted": "04/06/2022",
+        "description": "Item Description Here"
+      },
+      "status": "N/A",
+      "rating": 1,
+      "price": 0.55,
+      "currency": "CAD",
+      "store": {
+        "name": "Alpine Store",
+        "logo": "https://via.placeholder.com/120x120.png",
+        "category": "Fashion",
+        "storeID": 5,
+        "openingHours": "6:00 - 18:00",
+        "phoneLine": "(13)-859-2112",
+        "numberOfFollowers": 687,
+        "address": {
+          "street": "Jane Newman St.",
+          "cordinates": { "longitude": 14.231, "lattitude": 12.11 }
+        }
+      }
+    }
+  ]
+}

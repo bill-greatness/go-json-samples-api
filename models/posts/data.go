@@ -1,29 +1,31 @@
 package posts
 
-import "time"
+import (
+	"encoding/json"
+	"os"
+)
 
-var TempPost = []Post{
-	{
-		UserID:  1,
-		Title:   "Getting Started in Life",
-		Content: "This is a very long text content",
-		Date:    time.Now(),
-	},
-	{
-		UserID:  2,
-		Title:   "Getting Started in Life 2",
-		Content: "This is a very long text content",
-		Date:    time.Date(2021, time.April, 4, 4, 5, 3, 5, time.Local),
-	},
-	{
-		UserID:  3,
-		Title:   "Getting Started in Life 3",
-		Content: "This is a very long text content",
-		Date:    time.Date(2021, time.April, 4, 4, 5, 13, 5, time.Local),
-	},
-}
+func GetData(total int) []*Post {
+	dir, _ := os.Getwd()
+	fileLink := dir + "/data/posts.json"
 
-func GetData(total int) []Post {
+	fileInfo, err := os.ReadFile(fileLink)
 
-	return TempPost
+	if err != nil {
+		panic(err)
+	}
+
+	var posts Posts
+	err = json.Unmarshal(fileInfo, &posts)
+
+	if err != nil {
+		panic(err)
+	}
+	Info := []*Post{}
+
+	for i := 0; i < total; i++ {
+		Info = append(Info, posts.Posts[i])
+	}
+
+	return Info
 }

@@ -2,21 +2,21 @@ package posts
 
 import (
 	"encoding/json"
-	"time"
 
 	"github.com/go-playground/validator/v10"
 )
 
 type Post struct {
-	Title   string    `json:"title" validate:"required"`
-	ID      string    `json:"id"`
-	UserID  int       `json:"userID" validate:"required"`
-	Content string    `json:"content" validate:"required"`
-	Date    time.Time `json:"datePosted"`
+	Title   string `json:"title" validate:"required"`
+	ID      int    `json:"postID"`
+	UserID  int    `json:"userID" validate:"required"`
+	Content string `json:"content" validate:"required"`
+	// some some reasons, instead of time.Time, using string.
+	Date string `json:"datePosted"`
 }
 
 type Posts struct {
-	Posts []Post
+	Posts []*Post `json:"posts"`
 }
 
 func (post *Post) Jsonize() string {

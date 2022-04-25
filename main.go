@@ -3,26 +3,19 @@ package main
 import (
 	"fmt"
 	"io"
-	"log"
+	"net/http"
 	"os"
+	"time"
 
+	"github.com/bill-greatness/goxide/models/comments"
 	"github.com/bill-greatness/goxide/models/posts"
 	"github.com/bill-greatness/goxide/models/todos"
 	"github.com/bill-greatness/goxide/models/users"
 	"github.com/gin-gonic/gin"
 )
 
-func getFormat() {
-	logger := log.New(io.MultiWriter(os.Stdout), "[goxide] ", log.LUTC)
-	headerStrings := "	 Method  |	Path |	IP Address | Time |	Status	\n"
-	formatString := fmt.Sprintf("%s\t\t%s \t %d \t %s", "Hello", "World", 1, "Hello")
-	fmt.Print(headerStrings)
-	logger.Print(formatString)
-}
-
 func main() {
 
-	getFormat()
 	// customizing the gin Logger
 
 	file, _ := os.Create("goxide-logs.log")
@@ -35,6 +28,33 @@ func main() {
 
 	router := gin.Default()
 
+	// load HTML Templates
+	router.LoadHTMLGlob("static/templates/**/*.tmpl")
+
+	// load hTml files.
+
+	// Trying custom log formats with gin.LoggerWithFormatter
+	router.Use(gin.LoggerWithFormatter(func(param gin.LogFormatterParams) string {
+		return fmt.Sprintf("%s - [%s] \"%s %s %s %d %s \"%s\" %s\"\n",
+			param.ClientIP,
+			param.TimeStamp.Format(time.RFC1123),
+			param.Method,
+			param.Path,
+			param.Request.Proto,
+			param.StatusCode,
+			param.Latency,
+			param.Request.UserAgent(),
+			param.ErrorMessage,
+		)
+	}))
+
+	// server static files.
+	router.Static("static/", "/static/css/index.css")
+
+	//Default Routes to Page
+	router.GET("/", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "home/index.tmpl", gin.H{"title": "Hello Page"})
+	})
 	// user router group.
 	user := router.Group("/users")
 	{
@@ -83,6 +103,20 @@ func main() {
 
 		// Delete Post by ID
 		post.DELETE("/:id", posts.DeletePost)
+	}
+
+	comment := router.Group("/comments")
+	{
+		// Get Random Comments, by default 30 comments, pass a ?total={int} for the total number of comments. max 60.
+		comment.GET("/:id", comments.GetComments)
+
+		// pass a query to this path with postID /comments?postID=4
+		comment.GET("/post", comments.GetComment)
+
+		comment.POST("/", comments.CreateComment)
+
+		// Delete By Comment ID
+		comment.DELETE("/:id", comments.DeleteComment)
 	}
 
 	router.Run("localhost:5050")

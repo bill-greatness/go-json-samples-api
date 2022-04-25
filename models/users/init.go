@@ -11,10 +11,9 @@ import (
 
 func GetUsers(c *gin.Context) {
 	total, err := strconv.Atoi(c.Query("total"))
-
 	// return users with a total of 5 if total query is not passed.
 	if err != nil {
-		c.JSON(http.StatusOK, GetData(5))
+		c.IndentedJSON(http.StatusOK, GetData(5))
 		return
 	}
 

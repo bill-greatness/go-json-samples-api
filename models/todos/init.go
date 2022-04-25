@@ -5,12 +5,18 @@ import (
 	"fmt"
 	"net/http"
 	"strconv"
+	"time"
 
 	"github.com/gin-gonic/gin"
 )
 
+const (
+	maxCount = 30
+	minCount = 10
+)
+
 func newID() int {
-	return len(Toos) + 1
+	return len(GetData(maxCount)) + 1
 }
 
 func getID(id string) int {
@@ -25,12 +31,19 @@ func getID(id string) int {
 }
 
 func GetTodos(c *gin.Context) {
+	total, err := strconv.Atoi(c.Query("total"))
+	if err != nil {
+		// if quest comes with no total query, return a total of 10 Todos
+		c.IndentedJSON(http.StatusOK, GetData(minCount))
+		return
+	}
 
-	c.JSON(http.StatusOK, Toos)
+	c.JSON(http.StatusOK, GetData(total))
 }
 
 func AddTodo(c *gin.Context) {
-	var newTodo Todo
+	Toos := GetData(maxCount)
+	var newTodo *Todo
 	if err := c.BindJSON(&newTodo); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"message": err.Error()})
 		return
@@ -40,14 +53,16 @@ func AddTodo(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"message": err.Error()})
 		return
 	}
+
 	newTodo.ID = newID()
+	newTodo.Time = time.Now().String()
 	Toos = append(Toos, newTodo)
 	c.JSON(http.StatusCreated, Toos)
 }
 
 func GetTodo(c *gin.Context) {
 	id := getID(c.Param("id"))
-
+	Toos := GetData(maxCount)
 	// check ID from getID.
 	if id == -1 {
 		c.JSON(http.StatusBadRequest, gin.H{"message": "invalid id specified, should be <type:int>"})
@@ -68,8 +83,9 @@ func GetTodo(c *gin.Context) {
 func UpdateTodo(c *gin.Context) {
 	id := getID(c.Param("id"))
 	body := c.Request.Body
+	Toos := GetData(maxCount)
 
-	var newBody Todo
+	var newBody *Todo
 	if id == -1 {
 		c.JSON(http.StatusNotFound, gin.H{"message": "todo id specified does not exist"})
 		return
@@ -92,8 +108,9 @@ func UpdateTodo(c *gin.Context) {
 func DeleteTodo(c *gin.Context) {
 	// using getID method to convert and check ID
 	id := getID(c.Param("id"))
+	Toos := GetData(maxCount)
 
-	var cleanedData []Todo
+	var cleanedData []*Todo
 	if id == -1 {
 		c.JSON(http.StatusNotFound, gin.H{"message": "todo id specified does not exist"})
 		return
