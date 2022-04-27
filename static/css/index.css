@@ -1,5 +1,77 @@
+body{
+    margin:20px;
+}
+
 .navbar{
     background-color: teal;
-    width: 100vh;
-    height: 300px;
+    display: flex;
+    padding:20px;
+    flex-direction: row;
+    justify-content: space-around;
+}
+/* left Navigation Tabs */
+.left a {
+    font-size:25px;
+    color:yellow;
+}
+
+/* right navigation Tabs */
+.right{
+    display: flex;
+    align-items: center;
+}
+
+.right a {
+    padding-left: 15px;
+    color:#fff;
+    font-size: 18px;
+    text-decoration: none;
+}
+/* container */
+.container{
+    display: grid;
+    grid-template-columns: 250px auto;
+    grid-template-areas: "sidebar", "content";
+}
+
+.sidebar{
+    max-height: 80vh;
+    background-color: blueviolet;
+}
+
+.content{
+    max-height: 80vh;
+    overflow-y: auto;
+    background-color: cadetblue;
+    padding: 5px;
+}
+
+.content p {
+    font-size: 15px;
+    padding: 0;
+}
+
+
+.aside1{
+    margin-left: 5px;
+}
+
+.define{
+    margin-left: 12px;
+}
+
+p{
+    font-size: 13px;
+}
+
+
+.usage{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 10px;
+}
+
+.ex{
+    min-height: 90px;
+    background-color: #000;
 }

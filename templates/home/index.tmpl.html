@@ -1,0 +1,58 @@
+{{ define "home/index.tmpl.html"}}
+<html>
+  <title>{{ .title }}</title>
+  <link rel="shortcut icon" href="/static/images/_.png" type="image/x-icon" />
+  <link rel="stylesheet" href="/static/css/index.css" />
+
+  <body>
+    {{ template "globals/header.tmpl.html" }}
+    <div class="container">
+      <div class="sidebar">{{ template "globals/sidebar.tmpl.html" }}</div>
+      <div class="content">
+        <div style="padding: 10px">
+          <h1>Goxide Samples.</h1>
+          <p>
+            Use this API to generate JSON Sample data for your test projects.
+            Information for Users, Products,Todos, Posts and Comments.
+          </p>
+
+          <h3>Users</h3>
+          <p>You can generate up to 100 User data per request. by default, you'll
+          have 10 users. you may pass a total query parameter to your call. User
+          ID is used across all data and can be used to get information for all
+          users in all other fields except products.</p>
+          
+          <h3>Todos</h3>
+          <p>You get a default of 10 todos on a single call.</p>
+
+          <h3>Posts</h3>
+          <p>Get a  default of 20 posts on a single call. you can use the ?total query to specify the number of posts needed.</p>
+          
+          <h3>Comments</h3>
+         <p>Get General comments or pass comments with a specific post id to get comments under a single posts.</p>
+          
+         <h3>Products</h3>
+
+          <h3>Usage Examples</h3>
+
+          <div class="usage">
+            <div class="ex">
+              hello
+            </div>
+            <div class="ex">
+              hello
+            </div>
+            <div class="ex">
+              hi
+            </div>
+            <div class="ex">
+              hello
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </body>
+  {{end}}
+</html>

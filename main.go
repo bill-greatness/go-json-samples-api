@@ -29,9 +29,7 @@ func main() {
 	router := gin.Default()
 
 	// load HTML Templates
-	router.LoadHTMLGlob("static/templates/**/*.tmpl")
-
-	// load hTml files.
+	router.LoadHTMLGlob("templates/**/*.tmpl.html")
 
 	// Trying custom log formats with gin.LoggerWithFormatter
 	router.Use(gin.LoggerWithFormatter(func(param gin.LogFormatterParams) string {
@@ -48,13 +46,16 @@ func main() {
 		)
 	}))
 
-	// server static files.
-	router.Static("static/", "/static/css/index.css")
+	// serve static files.
+	router.Static("/static", "./static")
+	router.StaticFile("/static", "./static/images/_.png")
 
 	//Default Routes to Page
 	router.GET("/", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "home/index.tmpl", gin.H{"title": "Hello Page"})
+		c.HTML(http.StatusOK, "home/index.tmpl.html", gin.H{"title": "Fake JSON Samples Generator"})
+
 	})
+
 	// user router group.
 	user := router.Group("/users")
 	{

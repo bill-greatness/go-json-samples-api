@@ -12,25 +12,25 @@ type CordinateInfo struct {
 
 // address Information
 type AddressInfo struct {
-	Street     string `json:"street"`
-	Cordinates *CordinateInfo
+	Street     string         `json:"street"`
+	Cordinates *CordinateInfo `json:"cordinates"`
 }
 
 // User Model Information.
 type User struct {
-	ID              int    `json:"id"`
-	Name            string `json:"name"`
-	Occupation      string `json:"occupation"`
-	Age             int    `json:"age"`
-	CountryOfOrigin string `json:"countryOfOrigin"`
-	PhotoURL        string `json:"photoURL"`
-	Email           string `json:"email"`
-	Gender          string `json:"gender"`
-	MaritalStatus   string `json:"maritalStatus"`
-	DateOfBirth     string `json:"dateOfBirth"`
-	PhoneLine       string `json:"phoneLine"`
-	IsActive        bool   `json:"isActive"`
-	Address         *AddressInfo
+	ID              int          `json:"id"`
+	Name            string       `json:"name"`
+	Occupation      string       `json:"occupation"`
+	Age             int          `json:"age"`
+	CountryOfOrigin string       `json:"countryOfOrigin"`
+	PhotoURL        string       `json:"photoURL"`
+	Email           string       `json:"email"`
+	Gender          string       `json:"gender"`
+	MaritalStatus   string       `json:"maritalStatus"`
+	DateOfBirth     string       `json:"dateOfBirth"`
+	PhoneLine       string       `json:"phoneLine"`
+	IsActive        bool         `json:"isActive"`
+	Address         *AddressInfo `json:"address"`
 }
 
 type Users struct {
