@@ -17,39 +17,62 @@
           </p>
 
           <h3>Users</h3>
-          <p>You can generate up to 100 User data per request. by default, you'll
-          have 10 users. you may pass a total query parameter to your call. User
-          ID is used across all data and can be used to get information for all
-          users in all other fields except products.</p>
-          
+          <p>
+            You can generate up to 100 User data per request. by default, you'll
+            have 10 users. you may pass a total query parameter to your call.
+            User ID is used across all data and can be used to get information
+            for all users in all other fields except products.
+          </p>
+
           <h3>Todos</h3>
           <p>You get a default of 10 todos on a single call.</p>
 
           <h3>Posts</h3>
-          <p>Get a  default of 20 posts on a single call. you can use the ?total query to specify the number of posts needed.</p>
-          
+          <p>
+            Get a default of 20 posts on a single call. you can use the ?total
+            query to specify the number of posts needed.
+          </p>
+
           <h3>Comments</h3>
-         <p>Get General comments or pass comments with a specific post id to get comments under a single posts.</p>
-          
-         <h3>Products</h3>
+          <p>
+            Get General comments or pass comments with a specific post id to get
+            comments under a single posts.
+          </p>
 
           <h3>Usage Examples</h3>
-
+          <p>End Point:bill-greatness.github.io</p>
           <div class="usage">
+            <!--Users Example -->
             <div class="ex">
-              hello
-            </div>
-            <div class="ex">
-              hello
-            </div>
-            <div class="ex">
-              hi
-            </div>
-            <div class="ex">
-              hello
-            </div>
-          </div>
+              <p>fetch(`url/users`).then(resp => resp.json())</p>
+              <p>fetch(`url/users/1`).then(resp => resp.json())</p>
+              <p>fetch(`url/users?total=25`).then(resp => resp.json())</p>
 
+              <h6>Sample Data</h6>
+              <code style="color: wheat;">
+                {
+                  name: "Hello"
+                }
+              </code>
+            </div>
+            <div class="ex">
+              <!-- Post Examples -->
+
+              <p>fetch(`url/posts`).then(resp => resp.json())</p>
+              <p>fetch(`url/posts/1`).then(resp => resp.json())</p>
+              <p>fetch(`url/posts?total=25`).then(resp => resp.json())</p>
+            </div>
+            <div class="ex">
+              <!-- Todo Examples -->
+              <code style="display: block; color:#fff;">
+                {
+                  name:"ehllo",
+                  gender:"male"
+                }
+              </code>
+            </div>
+            <div class="ex">hello</div>
+          </div>
         </div>
       </div>
     </div>
