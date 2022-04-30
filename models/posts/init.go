@@ -65,7 +65,8 @@ func GetPosts(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"message": "cannot pass total query. should be an <type:int>"})
 		return
 	}
-	c.JSON(http.StatusOK, GetData(count))
+	postData := []*Posts{{Posts: GetData(count)}}
+	c.IndentedJSON(http.StatusOK, postData)
 }
 
 func GetPost(c *gin.Context) {
@@ -73,7 +74,7 @@ func GetPost(c *gin.Context) {
 
 	for _, post := range TempPost {
 		if post.ID == id {
-			c.JSON(http.StatusOK, post)
+			c.IndentedJSON(http.StatusOK, post)
 			return
 		}
 	}

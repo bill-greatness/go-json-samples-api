@@ -19,10 +19,10 @@ func GetUsers(c *gin.Context) {
 
 	// by default, you may get only 200 users per a query, if total is more than 200, w
 	if total < 20 {
-		c.JSON(http.StatusOK, GetData(total))
+		c.IndentedJSON(http.StatusOK, GetData(total))
 		return
 	} else {
-		c.JSON(http.StatusOK, GetData(20-total))
+		c.IndentedJSON(http.StatusOK, GetData(20-total))
 		return
 	}
 }

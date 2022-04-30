@@ -3,22 +3,43 @@
     <h3>API Definitions</h3>
     <div>
         <div class="data">
-            <h5>Users</h5>
+            <h4>Users</h4>
             <div class="define">
                 <p>POST - / + {data} </p>
                 <p>GET - [/] | [?total={number}] | [/:id]</p>
                 <p>DELETE - /:id</p>
-                <p>PATCH - /:id</p>
+                <p>PATCH - /:id + {data}</p>
             </div>
         </div>
+        
+        <div class="data">
+            <h5>Todos</h5>
+            <div class="define">
+                <p>POST / + {data}</p>
+                <p>GET [/]  [total?={number}] | [/:id}</p>
+                <p>DELETE - /:id</p> 
+                <p>PATCH - /:id + {data}</p> 
+            </div>
+        </div>
+
+        <div class="data">
+            <h5>Posts</h5>
+            <div class="define">
+                <p>POST / + {data}</p>
+                <p>GET [/]  [/post?postID={number}] | [/:id}</p>
+                <p>DELETE - /:id</p> 
+            </div>
+        </div>
+
         <div class="data">
             <h5>Comments</h5>
             <div class="define">
-                <p>POST</p>
-                <p>GET</p>
-                <p>DELETE</p> 
+                <p>POST / + {data}</p>
+                <p>GET [/]  [/post?postID={number}] | [/:id}</p>
+                <p>DELETE - /:id</p> 
             </div>
         </div>
+
 
  
     </div>

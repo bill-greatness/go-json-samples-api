@@ -38,7 +38,8 @@ body{
 
 .sidebar{
     max-height: 80vh;
-    background-color: blueviolet;
+    background-color: rgb(245, 242, 248);
+    overflow-y: auto;
 }
 
 .content{
@@ -60,6 +61,7 @@ body{
 
 .define{
     margin-left: 12px;
+    margin-top: 0;
 }
 
 p{
@@ -69,7 +71,7 @@ p{
 
 .usage{
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(3, auto);
     gap: 10px;
 }
 
@@ -78,9 +80,10 @@ p{
     background-color: #000;
 }
 
-.ex p {
+.ex p, .ex a{
     color: yellow;
     font-family: 'Fira Code', monospace;
     font-size: 10px;
     padding:0 2px;
+    text-decoration: none;
 }

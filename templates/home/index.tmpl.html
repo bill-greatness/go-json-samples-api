@@ -9,19 +9,19 @@
     <div class="container">
       <div class="sidebar">{{ template "globals/sidebar.tmpl.html" }}</div>
       <div class="content">
-        <div style="padding: 10px">
-          <h1>Goxide Samples.</h1>
+        <div style="padding:5px">
+          <h1>Fake JSON Samples</h1>
           <p>
             Use this API to generate JSON Sample data for your test projects.
-            Information for Users, Products,Todos, Posts and Comments.
+            Information for Users,Todos, Posts and Comments.
           </p>
 
           <h3>Users</h3>
           <p>
-            You can generate up to 100 User data per request. by default, you'll
+            You can generate up to 100 users data per request. By default, you'll
             have 10 users. you may pass a total query parameter to your call.
             User ID is used across all data and can be used to get information
-            for all users in all other fields except products.
+            for all users in all other fields.
           </p>
 
           <h3>Todos</h3>
@@ -44,34 +44,18 @@
           <div class="usage">
             <!--Users Example -->
             <div class="ex">
-              <p>fetch(`url/users`).then(resp => resp.json())</p>
-              <p>fetch(`url/users/1`).then(resp => resp.json())</p>
-              <p>fetch(`url/users?total=25`).then(resp => resp.json())</p>
+              <p><a target="_blank" href="/users">fetch(`url/users`).then(resp => resp.json())</a></p>
+              <p><a target="_blank" href="/users/1">fetch(`url/users/1`).then(resp => resp.json())</a></p>
+              <p><a target="_blank" href="/users?total=6">fetch(`url/users?total=6`).then(resp => resp.json())</a></p>
 
-              <h6>Sample Data</h6>
-              <code style="color: wheat;">
-                {
-                  name: "Hello"
-                }
-              </code>
             </div>
             <div class="ex">
               <!-- Post Examples -->
 
-              <p>fetch(`url/posts`).then(resp => resp.json())</p>
-              <p>fetch(`url/posts/1`).then(resp => resp.json())</p>
-              <p>fetch(`url/posts?total=25`).then(resp => resp.json())</p>
+              <p><a target="_blank" href="/posts">fetch(`url/posts`).then(resp => resp.json())</a></p>
+              <p><a target="_blank" href="/posts/1">fetch(`url/posts/1`).then(resp => resp.json())</a></p>
+              <p><a target="_blank" href="/posts?total=4">fetch(`url/posts?total=4`).then(resp => resp.json())</a></p>
             </div>
-            <div class="ex">
-              <!-- Todo Examples -->
-              <code style="display: block; color:#fff;">
-                {
-                  name:"ehllo",
-                  gender:"male"
-                }
-              </code>
-            </div>
-            <div class="ex">hello</div>
           </div>
         </div>
       </div>
