@@ -1,15 +1,24 @@
 {{ define "home/index.tmpl.html"}}
-<html>
-  <title>{{ .title }}</title>
-  <link rel="shortcut icon" href="/static/images/_.png" type="image/x-icon" />
-  <link rel="stylesheet" href="/static/css/index.css" />
+<html lang="en">
+  <head>
+    <title>{{ .title }}</title>
+    <meta
+      name="description"
+      content="Generate fake JSON Samples for your projects"
+    />
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="/static/images/_.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/static/css/index.css" />
+    <link rel="stylesheet" href="/static/css/fa/css/font-awesome.min.css">
 
+    
+  </head>
   <body>
     {{ template "globals/header.tmpl.html" }}
     <div class="container">
       <div class="sidebar">{{ template "globals/sidebar.tmpl.html" }}</div>
       <div class="content">
-        <div style="padding:5px">
+        <div>
           <h1>Fake JSON Samples</h1>
           <p>
             Use this API to generate JSON Sample data for your test projects.
@@ -18,10 +27,10 @@
 
           <h3>Users</h3>
           <p>
-            You can generate up to 100 users data per request. By default, you'll
-            have 10 users. you may pass a total query parameter to your call.
-            User ID is used across all data and can be used to get information
-            for all users in all other fields.
+            You can generate up to 100 users data per request. By default,
+            you'll have 10 users. you may pass a total query parameter to your
+            call. User ID is used across all data and can be used to get
+            information for all users in all other fields.
           </p>
 
           <h3>Todos</h3>
@@ -44,17 +53,40 @@
           <div class="usage">
             <!--Users Example -->
             <div class="ex">
-              <p><a target="_blank" href="/users">fetch(`url/users`).then(resp => resp.json())</a></p>
-              <p><a target="_blank" href="/users/1">fetch(`url/users/1`).then(resp => resp.json())</a></p>
-              <p><a target="_blank" href="/users?total=6">fetch(`url/users?total=6`).then(resp => resp.json())</a></p>
-
+              <p>
+                <a target="_blank" href="/users"
+                  >fetch(`url/users`).then(resp => resp.json())</a
+                >
+              </p>
+              <p>
+                <a target="_blank" href="/users/1"
+                  >fetch(`url/users/1`).then(resp => resp.json())</a
+                >
+              </p>
+              <p>
+                <a target="_blank" href="/users?total=6"
+                  >fetch(`url/users?total=6`).then(resp => resp.json())</a
+                >
+              </p>
             </div>
             <div class="ex">
               <!-- Post Examples -->
 
-              <p><a target="_blank" href="/posts">fetch(`url/posts`).then(resp => resp.json())</a></p>
-              <p><a target="_blank" href="/posts/1">fetch(`url/posts/1`).then(resp => resp.json())</a></p>
-              <p><a target="_blank" href="/posts?total=4">fetch(`url/posts?total=4`).then(resp => resp.json())</a></p>
+              <p>
+                <a target="_blank" href="/posts"
+                  >fetch(`url/posts`).then(resp => resp.json())</a
+                >
+              </p>
+              <p>
+                <a target="_blank" href="/posts/1"
+                  >fetch(`url/posts/1`).then(resp => resp.json())</a
+                >
+              </p>
+              <p>
+                <a target="_blank" href="/posts?total=4"
+                  >fetch(`url/posts?total=4`).then(resp => resp.json())</a
+                >
+              </p>
             </div>
           </div>
         </div>

@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&family=Sen&display=swap');
 body{
-    margin:20px;
     font-family: sen;
+    margin:0;
+    font-size: 14px;
+    box-sizing: border-box;
 }
 
 .navbar{
     background-color: teal;
     display: flex;
+    position:sticky;
+    top:0;
     padding:20px;
     flex-direction: row;
     justify-content: space-around;
@@ -33,27 +37,23 @@ body{
 .container{
     display: grid;
     grid-template-columns: 250px auto;
-    grid-template-areas: "sidebar", "content";
+    grid-template-rows: auto;
 }
 
 .sidebar{
-    max-height: 80vh;
     background-color: rgb(245, 242, 248);
     overflow-y: auto;
 }
 
 .content{
-    max-height: 80vh;
-    overflow-y: auto;
     background-color: cadetblue;
     padding: 5px;
 }
 
 .content p {
-    font-size: 12px;
+    font-size: 15px;
     padding: 0;
 }
-
 
 .aside1{
     margin-left: 5px;
@@ -65,14 +65,19 @@ body{
 }
 
 p{
-    font-size: 11px;
+    font-size: 14px;
+}
+
+h3{
+    font-size: 20px;
 }
 
 
 .usage{
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(2, auto);
     gap: 10px;
+    grid-auto-flow: column;
 }
 
 .ex{
@@ -83,7 +88,35 @@ p{
 .ex p, .ex a{
     color: yellow;
     font-family: 'Fira Code', monospace;
-    font-size: 10px;
+    font-size: 12px;
     padding:0 2px;
     text-decoration: none;
 }
+
+.nav-menu{
+    display: none;
+}
+
+@media screen and (max-width:700px) {
+    .navbar{
+        justify-content: space-between;
+    }
+    .sidebar, .right{
+        display: none;
+    }
+
+    .content{
+        min-width: 100vw;
+    }
+    /* Show Tabs */
+    .nav-menu{
+        display: inline-flex;
+        cursor:pointer;
+    }
+
+    .usage{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
