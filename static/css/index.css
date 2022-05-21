@@ -6,6 +6,10 @@ body{
     box-sizing: border-box;
 }
 
+/* Overwrite font awesome classes */
+.fa{
+    font-size: 30px !important;
+}
 .navbar{
     background-color: teal;
     display: flex;
@@ -20,6 +24,7 @@ body{
     font-size:25px;
     color:yellow;
 }
+
 
 /* right navigation Tabs */
 .right{
@@ -46,12 +51,12 @@ body{
 }
 
 .content{
-    background-color: cadetblue;
+    background-color: rgb(255, 255, 255);
     padding: 5px;
 }
 
 .content p {
-    font-size: 15px;
+    font-size: 16px;
     padding: 0;
 }
 
@@ -68,7 +73,7 @@ p{
     font-size: 14px;
 }
 
-h3{
+h3, h5{
     font-size: 20px;
 }
 
@@ -82,18 +87,45 @@ h3{
 
 .ex{
     min-height: 90px;
-    background-color: #000;
+    border-radius: 5px;
+    background-color: rgb(43, 43, 4);
+    box-shadow: 10px 5px 4px rgb(169, 179, 179);
 }
 
 .ex p, .ex a{
     color: yellow;
     font-family: 'Fira Code', monospace;
-    font-size: 12px;
+    font-size: 14px;
     padding:0 2px;
     text-decoration: none;
 }
 
 .nav-menu{
+    display: none;
+}
+
+#mobile-nav{
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    background-color: #fff;
+    padding: 10px;
+}
+
+.sample{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.samples{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.mobile{
     display: none;
 }
 
@@ -106,7 +138,8 @@ h3{
     }
 
     .content{
-        min-width: 100vw;
+        width: 100vw;
+        padding:10px;
     }
     /* Show Tabs */
     .nav-menu{
@@ -118,5 +151,28 @@ h3{
         display: flex;
         flex-direction: column;
     }
+
+
+
+    .show-mobile{
+        display: flex;
+        animation-name: slide-in;
+        animation-timing-function: ease-in;
+        animation-duration: 0.5s;
+        animation-delay: 0ms;
+
+    }
+
+    @keyframes slide-in{
+        from{
+            transform: translateY(10px);
+        }
+        to{
+            transform: translateY(0px)
+        }
+    }
+
 }
+
+
 

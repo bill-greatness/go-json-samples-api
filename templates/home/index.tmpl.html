@@ -9,9 +9,10 @@
     <meta charset="UTF-8" />
     <link rel="shortcut icon" href="/static/images/_.png" type="image/x-icon" />
     <link rel="stylesheet" href="/static/css/index.css" />
-    <link rel="stylesheet" href="/static/css/fa/css/font-awesome.min.css">
-
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body>
     {{ template "globals/header.tmpl.html" }}
@@ -49,7 +50,7 @@
           </p>
 
           <h3>Usage Examples</h3>
-          <p>End Point:bill-greatness.github.io</p>
+          <p>End Point:someRandomName</p>
           <div class="usage">
             <!--Users Example -->
             <div class="ex">
@@ -92,6 +93,21 @@
         </div>
       </div>
     </div>
+    <div id="mobile" class="mobile">{{template "globals/mobile.tmpl.html"}}</div>
+
+    <script>
+      function toggleMobile(){
+        const bar = document.getElementById("mobile")
+        const isMobile = bar.classList.contains("mobile")
+        if(isMobile){
+          bar.classList.remove("mobile")
+          bar.classList.add("show-mobile")
+        }else{
+          bar.classList.remove("show-mobile")
+          bar.classList.add("mobile")
+        }
+      }
+    </script>
   </body>
   {{end}}
 </html>
