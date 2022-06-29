@@ -5,7 +5,23 @@ import (
 	"os"
 )
 
-func GetData(total int) []*Post {
+const (
+	indexPage  = 1
+	chunckSize = 10
+)
+
+func getPagination(page int) (start int, end int) {
+	if page == 1 {
+		return indexPage - 1, chunckSize
+	} else {
+		startIndex := (indexPage * page) * chunckSize
+		endIndex := startIndex + chunckSize
+		return startIndex, endIndex
+	}
+
+}
+
+func GetData(page int) []*Post {
 	dir, _ := os.Getwd()
 	fileLink := dir + "/data/posts.json"
 
@@ -23,7 +39,8 @@ func GetData(total int) []*Post {
 	}
 	Info := []*Post{}
 
-	for i := 0; i < total; i++ {
+	start, end := getPagination(page)
+	for i := start; i < end; i++ {
 		Info = append(Info, posts.Posts[i])
 	}
 

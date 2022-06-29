@@ -7,7 +7,24 @@ import (
 	"os"
 )
 
-func GetData(total int) []*User {
+const (
+	chunckSize = 10
+	indexPage  = 1
+)
+
+func getPagination(page int) (start int, end int) {
+	if page == 1 {
+		return indexPage - 1, chunckSize
+	} else {
+		startIndex := (indexPage * page) * chunckSize
+		endIndex := startIndex + chunckSize
+		return startIndex, endIndex
+	}
+
+}
+
+func GetData(page int) []*User {
+
 	dir, _ := os.Getwd()
 	fileLink := dir + "/data/users.json"
 
@@ -27,9 +44,11 @@ func GetData(total int) []*User {
 	}
 
 	Info := []*User{}
+	// substitute total for page.
 
 	// get users by the total number.
-	for count := 0; count < total; count++ {
+	start, end := getPagination(page)
+	for count := start; count < end; count++ {
 		Info = append(Info, users.Users[count])
 	}
 

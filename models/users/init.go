@@ -10,21 +10,15 @@ import (
 )
 
 func GetUsers(c *gin.Context) {
-	total, err := strconv.Atoi(c.Query("total"))
-	// return users with a total of 5 if total query is not passed.
+	page, err := strconv.Atoi(c.Query("page"))
+	// use default page of one if page query not defined.
 	if err != nil {
-		c.IndentedJSON(http.StatusOK, GetData(5))
+		c.IndentedJSON(http.StatusOK, GetData(1))
 		return
 	}
 
-	// by default, you may get only 200 users per a query, if total is more than 200, w
-	if total < 20 {
-		c.IndentedJSON(http.StatusOK, GetData(total))
-		return
-	} else {
-		c.IndentedJSON(http.StatusOK, GetData(20-total))
-		return
-	}
+	c.IndentedJSON(http.StatusOK, GetData(page))
+
 }
 
 // get a user with a specific ID, options are the id will change on every call since the data is called at random.

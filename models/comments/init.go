@@ -10,24 +10,18 @@ import (
 )
 
 var (
-	Comments   = GenerateComments(maxCount)
-	CommentMin = GenerateComments(minCount)
+	Comments   = GenerateComments(1)
 )
 
 func GetComments(c *gin.Context) {
-	total := c.Query("total")
-	if total == "" {
-		c.IndentedJSON(http.StatusOK, CommentMin)
-		return
-	}
-
-	count, err := strconv.Atoi(total)
+	page, err := strconv.Atoi(c.Query("page"))
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"message": "Unable to pass total"})
+		c.IndentedJSON(http.StatusOK, GenerateComments(1))
 		return
 	}
 
-	c.IndentedJSON(http.StatusOK, GenerateComments(count))
+
+	c.IndentedJSON(http.StatusOK, GenerateComments(page))
 }
 
 func CreateComment(c *gin.Context) {

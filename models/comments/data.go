@@ -6,11 +6,22 @@ import (
 )
 
 const (
-	maxCount = 60
-	minCount = 30
+	indexPage  = 1
+	chunckSize = 10
 )
 
-func GenerateComments(total int) []*Comment {
+func getPagination(page int) (start int, end int) {
+	if page == 1 {
+		return indexPage - 1, chunckSize
+	} else {
+		startIndex := (indexPage * page) * chunckSize
+		endIndex := startIndex + chunckSize
+		return startIndex, endIndex
+	}
+
+}
+
+func GenerateComments(page int) []*Comment {
 	dir, _ := os.Getwd()
 	fileLink := dir + "/data/comments.json"
 
@@ -27,7 +38,8 @@ func GenerateComments(total int) []*Comment {
 	}
 
 	Info := []*Comment{}
-	for i := 0; i < total; i++ {
+	start, end := getPagination(page)
+	for i := start; i < end; i++ {
 		Info = append(Info, comments.Comments[i])
 	}
 
